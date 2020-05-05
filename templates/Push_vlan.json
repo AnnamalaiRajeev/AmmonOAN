@@ -1,0 +1,25 @@
+{
+"dpid": 1,
+"priority": 65535,
+"table_id": 0,
+"match":{
+    "in_port":3,
+    "eth_type": 2048,
+    "ipv4_src": "10.0.0.3"
+        },
+"actions":[
+     {
+        "type": "PUSH_VLAN",
+        "ethertype": 33024
+    },
+    {
+        "type": "SET_FIELD",
+        "field": "vlan_vid",
+        "value": 610
+    },
+    {
+        "type":"GOTO_TABLE",
+        "table_id": 1
+    }
+    ]
+}
